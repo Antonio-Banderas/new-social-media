@@ -5,9 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-<form action="">
-    <label for="name">Write your name</label>
-    <input type="text" id="name">
+<form action="/create-post" method="post">
+
+    <!-- Name -->
+    <label for="title">Write your name:</label>
+    <input type="text" name ="title" id="title">
+
+    <!-- Price -->
+    <label for="price">Enter price:</label>
+    <input type="number" name="price" id="price">
+
+    <!-- Submit -->
+    <button type="submit">Submit!</button>
+
 </form>
 </body>
 </html>
