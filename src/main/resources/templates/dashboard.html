@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head.html"></head>
+<body>
+
+<main>
+
+
+<ul th:each="post : ${post}">
+    <li th:text="${post.title}"></li>
+    <li th:text="${post.price}"></li>
+</ul>
+
+
+</main>
+
+
+</body>
+</html>

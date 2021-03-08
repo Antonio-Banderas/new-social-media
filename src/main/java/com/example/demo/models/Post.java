@@ -12,8 +12,11 @@ public class Post {
 
     }
 
-    @Override
-    public String toString() {
-        return "[ Title: " + title + "Price: " + price + " ]";
+    public String getTitle() {
+        return title;
+    }
+
+    public int getPrice() {
+        return price;
     }
 }

@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="fragments/head.html"></head>
 <body>
 <form action="/create-post" method="post">
 
     <!-- Name -->
     <label for="title">Write your name:</label>
-    <input type="text" name ="title" id="title">
+    <input required type="text" name ="title" id="title">
 
     <!-- Price -->
     <label for="price">Enter price:</label>
-    <input type="number" name="price" id="price">
+    <input required type="number" name="price" id="price">
 
     <!-- Submit -->
     <button type="submit">Submit!</button>

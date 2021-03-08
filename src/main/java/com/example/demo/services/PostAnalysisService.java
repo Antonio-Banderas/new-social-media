@@ -27,4 +27,5 @@ public class PostAnalysisService {
     public ArrayList<String> getAllPostsAsString() {
         return allPostsAsString;
     }
+
 }

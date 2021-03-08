@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.models.Post;
 import com.example.demo.services.PostAnalysisService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +15,16 @@ import java.util.ArrayList;
 @Controller
 public class SocialMediaController {
 
+    // ---------- Zzztufff ---------- //
+
     PostAnalysisService postService = new PostAnalysisService();
+
+    // ----------  Aux. endpoints  ---------- //
+
+    @GetMapping(value = "/index")
+    public String renderIndex() {
+        return "index";
+    }
 
     // ----------  Submit post  ---------- //
 
@@ -51,10 +61,15 @@ public class SocialMediaController {
 
 
     // ----------  Dashboard  ---------- //
+
     @GetMapping("/dashboard")
-    @ResponseBody
-    public ArrayList<String> renderList() {
-        return postService.getAllPostsAsString();
+    public String renderDashboard(Model model) {
+
+        ArrayList postsArray = postService.getAllPostsAsPost();
+
+        model.addAttribute("post",postsArray);
+
+        return "dashboard";
     }
 
 }

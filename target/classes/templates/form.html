@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="fragments/head.html"></head>
 <body>
-<form action="">
-    <label for="name">Write your name</label>
-    <input type="text" id="name">
+<form action="/create-post" method="post">
+
+    <!-- Name -->
+    <label for="title">Write your name:</label>
+    <input required type="text" name ="title" id="title">
+
+    <!-- Price -->
+    <label for="price">Enter price:</label>
+    <input required type="number" name="price" id="price">
+
+    <!-- Submit -->
+    <button type="submit">Submit!</button>
+
 </form>
 </body>
 </html>
